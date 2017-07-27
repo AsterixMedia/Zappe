@@ -25,4 +25,5 @@ class IndexPage extends React.Component {
       add={this.props.add}
       minus={this.props.minus} />
 }
+
 export default IndexPage

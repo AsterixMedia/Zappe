@@ -1,15 +1,16 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import logger from 'redux-logger'
+import immutableRedux from 'redux-immutable-state-invariant'
 import thunk from 'redux-thunk'
 
 import reducers from '../reducers'
 
 const INITIAL_STATE = {}
 
-const middlewares = [thunk]
+const prodMiddlewares = [thunk]
+const devMiddlewares = [logger, immutableRedux()]
 
-// add dev middlewares
-middlewares.push(logger)
+const middlewares = [...prodMiddlewares, ...devMiddlewares]
 
 export const store = createStore(
   reducers,

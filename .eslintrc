@@ -5,6 +5,6 @@
     "html"
   ],
   "settings": {
-    "html/javascript-mime-types": ["text/javascript", "text/jsx"] // also use script tags with a "text/jsx" type attribute
+    "html/javascript-mime-types": ["text/javascript", "text/jsx"]
   }
 }

@@ -2,10 +2,14 @@ import React from 'react'
 
 import IndexPage from './pages/index'
 import DefaultLayout from './layouts/default'
+import Head from './components/Head'
 
-export default class App extends React.Component {
+class App extends React.Component {
   render = () =>
     <div>
-      <DefaultLayout component={IndexPage} path='/' />
+      <Head />
+      <DefaultLayout component={IndexPage} path='/' title='Index' />
     </div>
 }
+
+export default App

@@ -12,14 +12,19 @@
   import ReactDOM from 'react-dom'
   import { AppContainer } from 'react-hot-loader'
   import Router from 'react-router-dom/BrowserRouter'
+  import { MuiThemeProvider } from 'material-ui/styles'
+
+  import { theme } from './libs'
 
   const render = () => {
     const App = require('./app').default
     ReactDOM.render(
       <AppContainer>
-        <Router>
-          <App />
-        </Router>
+        <MuiThemeProvider theme={theme}>
+          <Router>
+            <App />
+          </Router>
+        </MuiThemeProvider>
       </AppContainer>,
       document.getElementById('App')
     )

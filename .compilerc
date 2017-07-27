@@ -8,7 +8,7 @@
           "stage-0",
           "react"
         ],
-        "plugins": ["react-hot-loader/babel"],
+        "plugins": ["transform-decorators-legacy", "react-hot-loader/babel"],
         "sourceMaps": "inline"
       }
     },
@@ -20,7 +20,7 @@
           "stage-0",
           "react"
         ],
-        "plugins": [],
+        "plugins": ["transform-decorators-legacy"],
         "sourceMaps": "none"
       }
     }

@@ -13,17 +13,20 @@
   import { AppContainer } from 'react-hot-loader'
   import Router from 'react-router-dom/BrowserRouter'
   import { MuiThemeProvider } from 'material-ui/styles'
+  import { Provider } from 'react-redux'
 
-  import { theme } from './libs'
+  import { theme, store } from './libs'
 
   const render = () => {
     const App = require('./app').default
     ReactDOM.render(
       <AppContainer>
         <MuiThemeProvider theme={theme}>
-          <Router>
-            <App />
-          </Router>
+          <Provider store={store}>
+            <Router>
+              <App />
+            </Router>
+          </Provider>
         </MuiThemeProvider>
       </AppContainer>,
       document.getElementById('App')

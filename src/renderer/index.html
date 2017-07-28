@@ -10,12 +10,12 @@
 <script type="text/jsx">
   import React from 'react'
   import ReactDOM from 'react-dom'
+  import Router from 'react-router-redux/ConnectedRouter'
   import { AppContainer } from 'react-hot-loader'
-  import Router from 'react-router-dom/BrowserRouter'
   import { MuiThemeProvider } from 'material-ui/styles'
   import { Provider } from 'react-redux'
 
-  import { theme, store } from './libs'
+  import { theme, store, history } from './libs'
 
   const render = () => {
     const App = require('./app').default
@@ -23,7 +23,7 @@
       <AppContainer>
         <MuiThemeProvider theme={theme}>
           <Provider store={store}>
-            <Router>
+            <Router history={history}>
               <App />
             </Router>
           </Provider>

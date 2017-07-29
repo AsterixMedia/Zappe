@@ -6,6 +6,7 @@
     "main": "src/main/index.js",
     "scripts": {
         "start": "electron-forge start",
+        "debug": "DEBUG=electron-forge:* electron-forge start",
         "package": "electron-forge package",
         "make": "electron-forge make",
         "lint": "echo \"No linting configured\""

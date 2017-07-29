@@ -1,8 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Score from '../components/Score'
-import { connect} from 'react-redux'
+import { connect } from 'react-redux'
+import Button from 'material-ui/Button'
+import { push } from 'react-router-redux'
 
+import { store } from '../libs'
+import Score from '../components/Score'
 import { add, minus } from '../actions'
 
 const mapStateToProps = state => ({
@@ -19,11 +22,18 @@ class IndexPage extends React.Component {
     minus: PropTypes.func
   }
 
+  goToAboutPage = () => {
+    store.dispatch(push('/about'))
+  }
+
   render = () =>
-    <Score
-      score={this.props.score}
-      add={this.props.add}
-      minus={this.props.minus} />
+    <div>
+      <Score
+        score={this.props.score}
+        add={this.props.add}
+        minus={this.props.minus} />
+      <Button onClick={this.goToAboutPage}>About Page</Button>
+    </div>
 }
 
 export default IndexPage

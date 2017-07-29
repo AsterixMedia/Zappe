@@ -2,13 +2,14 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import logger from 'redux-logger'
 import immutableRedux from 'redux-immutable-state-invariant'
 import thunk from 'redux-thunk'
-import createHistory from 'history/createBrowserHistory'
+// import createHistory from 'history/createBrowserHistory'
+import createHashHistory from 'history/createHashHistory'
 import routerMiddleware from 'react-router-redux/middleware'
 
 import reducers from '../reducers'
 
 const INITIAL_STATE = {}
-const history = createHistory()
+const history = createHashHistory()
 
 const prodMiddlewares = [thunk, routerMiddleware(history)]
 const devMiddlewares = [logger, immutableRedux()]

@@ -18,8 +18,8 @@ const styleSheet = createStyleSheet('NavBar', {
     flex: 1
   },
   brand: {
-    textDecoration: 'none',
-    color: 'none'
+    textDecoration: 'inherit',
+    color: 'inherit'
   }
 })
 
@@ -32,9 +32,9 @@ const NavBar = ({classes, onMenuPress}) =>
         </IconButton>
         <Typography
           type='title'
-          color='inherit'
-          className={classes.flex}>
-          <Link to='/' style={{textDecoration: 'none'}}>
+          className={classes.flex}
+          color='inherit'>
+          <Link to='/' className={classes.brand}>
             Odios
           </Link>
         </Typography>
@@ -45,7 +45,7 @@ const NavBar = ({classes, onMenuPress}) =>
 
 NavBar.propTypes = {
   classes: PropTypes.object.isRequired,
-  onMenuPress: PropTypes.func
+  onMenuPress: PropTypes.func.isRequired
 }
 
 export default withStyles(styleSheet)(NavBar)
